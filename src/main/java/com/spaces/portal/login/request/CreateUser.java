@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 
 @Data
@@ -16,20 +18,26 @@ public class CreateUser {
 	
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id()
-	@Column(name="id")
-	private String userID;
-	@Column(name="user_type")
-	private String userType;
+	
+	private Long userID;
+	//@JsonProperty("user_type")
+	//@Column(name="user_type")
+	//private String userType;
 	@Column(name="first_name")
+	@JsonProperty("name")
 	private String fName;
+	@JsonProperty("lasName")
 	@Column(name="last_name")
 	private String lName;
+	@JsonProperty("email")
 	@Column(name="email")
 	private String email;
-	@Column(name="user_name")
-	private String userName;
-	@Column(name="password")
-	private String password;
+	//@JsonProperty("userName")
+	//@Column(name="user_name")
+	//private String userName;
+	//@JsonProperty("password")
+	//@Column(name="password")
+	//private String password;
 	
 	
 
